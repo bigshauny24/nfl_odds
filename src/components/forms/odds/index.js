@@ -6,7 +6,7 @@ class OddsForm extends Component {
     return (
       <form onSubmit={this.props.getInput}>
       <div className="row">
-        <div class="col">
+        <div className="col">
 
         </div>
         <div className="col">
