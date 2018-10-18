@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './index.css';
+import OddsItem from './oddsItem'
 
 class OddsTable extends Component {
   constructor(){
@@ -44,7 +45,6 @@ class OddsTable extends Component {
 
   getTeamName = abbr =>{
     let name = this.state.teams[abbr];
-    console.log(abbr, name);
     return name;
   }
 
@@ -68,17 +68,11 @@ class OddsTable extends Component {
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <th scope="col">
-                      <img className="logo" alt="NFL Logo"  src={require('../../../static/images/pit.png')} />
-                    </th>
-                  <td>{this.getTeamName('PIT')}</td>
-                    <th scope="col">
-                      <img className="logo" alt="NFL Logo" src={require('../../../static/images/ne.png')} />
-                    </th>
-                  <td>{this.getTeamName('NE')}</td>
-                  <td>58.9</td>
-                </tr>
+                {
+                  this.props.data && this.props.data.map(
+                    (game, key) => <OddsItem key={key} game={game} getTeamName={this.getTeamName} />
+                  )
+                }
               </tbody>
             </table>
           </div>

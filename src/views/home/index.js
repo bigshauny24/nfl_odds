@@ -56,7 +56,7 @@ class Home extends Component {
         <OddsForm getInput = {this.getInput} />
         <h1>Year: {this.state.year} </h1>
         <h3>Week: {this.state.week}</h3>
-        <OddsTable />
+        <OddsTable data={this.state.data} />
       </div>
     );
   }
