@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './index.css';
 import OddsForm from '../../components/forms/odds';
+import OddsTable from '../../components/tables/odds';
 
 class Home extends Component {
 
@@ -30,6 +31,7 @@ class Home extends Component {
         <OddsForm getInput = {this.getInput} />
         <h1>Year: {this.state.year} </h1>
         <h3>Week: {this.state.week}</h3>
+        <OddsTable />
       </div>
     );
   }
