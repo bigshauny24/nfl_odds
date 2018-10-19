@@ -10,15 +10,18 @@ class ScoresItem extends Component {
     return (
       <tr>
         <th scope="col">
-            <img className="logo" alt="NFL Logo" src={require('../../../../static/images/' + this.props.game.AwayTeamName.toLowerCase() + '.png')} />
+            <img className="logo" alt="NFL Logo" src={require('../../../../static/images/' + this.props.game.AwayTeam.toLowerCase() + '.png')} />
           </th>
-        <td>{this.props.getTeamName(this.props.game.AwayTeamName)}</td>
+        <td>{this.props.getTeamName(this.props.game.AwayTeam)}</td>
+        <td>{this.props.game.AwayScore &&
+            this.props.game.AwayScore}
+        </td>
           <th scope="col">
-            <img className="logo" alt="NFL Logo" src={require('../../../../static/images/' + this.props.game.HomeTeamName.toLowerCase() + '.png')} />
+            <img className="logo" alt="NFL Logo" src={require('../../../../static/images/' + this.props.game.HomeTeam.toLowerCase() + '.png')} />
           </th>
-        <td>{this.props.getTeamName(this.props.game.HomeTeamName)}</td>
-        <td>{this.props.game.PregameOdds &&
-            this.props.game.PregameOdds[1].OverUnder}
+        <td>{this.props.getTeamName(this.props.game.HomeTeam)}</td>
+        <td>{this.props.game.HomeScore &&
+            this.props.game.HomeScore}
         </td>
       </tr>
     );

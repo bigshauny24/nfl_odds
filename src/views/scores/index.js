@@ -34,6 +34,7 @@ class Scores extends Component {
     let url =
     `https://api.fantasydata.net/v3/nfl/scores/JSON/ScoresByWeek/${year}/${week}
     `
+
     fetch(url, {'headers': {'Ocp-Apim-Subscription-Key': API_KEY}})
       .then(
         res => res.json()

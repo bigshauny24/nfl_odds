@@ -60,11 +60,12 @@ class ScoresTable extends Component {
                     <img className="logo" alt="NFL Logo" src={require('../../../static/images/nfl.png')} />
                   </th>
                   <th scope="col">Away Team</th>
+                  <th scope="col">Score</th>
                   <th scope="col">
                     <img className="logo" alt="NFL Logo" src={require('../../../static/images/nfl.png')} />
                   </th>
                   <th scope="col">Home Team</th>
-                  <th scope="col">Scores</th>
+                  <th scope="col">Score</th>
                 </tr>
               </thead>
               <tbody>
