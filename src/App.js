@@ -4,6 +4,7 @@ import {Switch, Route} from 'react-router-dom';
 import Home from './views/home';
 import Scores from './views/scores';
 import Header from './components/header';
+//import LoginPage from './views/loginPage/index.js';
 
 class App extends Component {
   render() {

@@ -11,14 +11,15 @@ class Home extends Component {
     this.state = {
       year: 2018,
       week: 1,
-      data:[]
+      data:[],
+      scores: []
     }
   }
 
   getInput = async(e) => {
     e.preventDefault();
 
-    const year = e.target.elements.year.value;
+    const year = '2018';
     const week = e.target.elements.week.value;
 
     this.setState({
@@ -27,6 +28,7 @@ class Home extends Component {
     })
 
     this.getData(year,week);
+    
   }
 
 
@@ -41,13 +43,29 @@ class Home extends Component {
       .then(
         data => this.setState({data: data})
       )
+      this.getScores(year,week)
+  }
+
+  getScores = (year, week) => {
+    let url =
+    `https://api.fantasydata.net/v3/nfl/scores/JSON/ScoresByWeek/${year}/${week}
+    `
+
+    fetch(url, {'headers': {'Ocp-Apim-Subscription-Key': API_KEY}})
       .then(
-        console.log(this.state.data)
+        res => res.json()
+      )
+      .then(
+        scores => this.setState({scores: scores})
+      )
+      .then(
+        console.log(this.state.scores)
       );
   }
 
   componentWillMount() {
     this.getData(2018, 1);
+    this.getScores(2018, 1);
   }
 
   render() {
@@ -56,7 +74,7 @@ class Home extends Component {
         <OddsForm getInput = {this.getInput} />
         <h1>Year: {this.state.year} </h1>
         <h3>Week: {this.state.week}</h3>
-        <OddsTable data={this.state.data} />
+        <OddsTable data={this.state.data} scores={this.state.data} />
       </div>
     );
   }

@@ -68,7 +68,7 @@ class OddsTable extends Component {
               <tbody>
                 {
                   this.props.data && this.props.data.map(
-                    (game, key) => <OddsItem key={key} game={game} getTeamName={this.getTeamName} />
+                    (game, key) => <OddsItem key={key} game={game} getTeamName={this.getTeamName} scores={this.props.scores} /> 
                   )
                 }
               </tbody>
