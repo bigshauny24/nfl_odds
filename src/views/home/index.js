@@ -21,9 +21,7 @@ class Home extends Component {
 
     const year = '2018';
     const week = e.target.elements.week.value;
-    const spread = 'Spread';
-    const moneyLine = 'MoneyLine';
-    const overUnder = 'OverUnder';
+    
 
     this.setState({
       year: year,

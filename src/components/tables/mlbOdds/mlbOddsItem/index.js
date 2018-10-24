@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import './index.css';
 
-class OddsItem extends Component {
+class MLBOddsItem extends Component {
   componentWillMount() {
     // console.log(this.props.game);
     // console.log(this.props.scores);
-    
   }
 
   getScore = (team) => {
@@ -51,4 +50,4 @@ class OddsItem extends Component {
   }
 }
 
-export default OddsItem;
+export default MLBOddsItem;
