@@ -4,7 +4,7 @@ import OddsForm from '../../components/forms/odds';
 import OddsTable from '../../components/tables/odds';
 import API_KEY from '../../config.js';
 
-class Home extends Component {
+class NFL extends Component {
 
   constructor() {
     super();
@@ -21,9 +21,7 @@ class Home extends Component {
 
     const year = '2018';
     const week = e.target.elements.week.value;
-    const spread = 'Spread';
-    const moneyLine = 'MoneyLine';
-    const overUnder = 'OverUnder';
+
 
     this.setState({
       year: year,
@@ -73,14 +71,14 @@ class Home extends Component {
 
   render() {
     return (
-      <div className="Home">
+      <div className="NFL">
         <OddsForm getInput = {this.getInput} />
         <h1>Year: {this.state.year} </h1>
         <h3>Week: {this.state.week}</h3>
-        <OddsTable data={this.state.data} scores={this.state.scores} />
+        <OddsTable data={this.state.data} scores={this.state.data} />
       </div>
     );
   }
 }
 
-export default Home;
+export default NFL;

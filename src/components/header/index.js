@@ -21,8 +21,20 @@ class Header extends Component {
             <li className="nav-item">
               <NavLink className="nav-link" to="/scores">Scores</NavLink>
             </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/nfl">NFL</NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/mlb">MLB</NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/nba">NBA</NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/nhl">NHL</NavLink>
+            </li>
           </ul>
-          
+
           <form className="form-inline my-2 my-lg-0">
             <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
             <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>

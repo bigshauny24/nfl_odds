@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './index.css';
+import {NavLink} from 'react-router-dom';
 
 class OddsForm extends Component {
   render() {
@@ -7,7 +8,9 @@ class OddsForm extends Component {
       <form onSubmit={this.props.getInput}>
       <div className="row">
         <div className="col">
-
+          <input type="submit" className="btn btn-primary" value="Spread" />
+          <input type="submit" className="btn btn-primary" value="MoneyLine" />
+          <input type="submit" className="btn btn-primary" value="OverUnder" />
         </div>
         <div className="col">
           <select className="form-control" name="week">
@@ -32,7 +35,6 @@ class OddsForm extends Component {
           </select>
         </div>
           <input type="submit" className="btn btn-primary" value="Get Odds" />
-
         </div>
       </form>
     );

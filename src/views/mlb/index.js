@@ -4,13 +4,12 @@ import OddsForm from '../../components/forms/odds';
 import OddsTable from '../../components/tables/odds';
 import API_KEY from '../../config.js';
 
-class Home extends Component {
+class MLB extends Component {
 
   constructor() {
     super();
     this.state = {
-      year: 2018,
-      week: 1,
+      date: '2018-03-29',
       data:[],
       scores: []
     }
@@ -19,25 +18,22 @@ class Home extends Component {
   getInput = async(e) => {
     e.preventDefault();
 
-    const year = '2018';
-    const week = e.target.elements.week.value;
-    const spread = 'Spread';
-    const moneyLine = 'MoneyLine';
-    const overUnder = 'OverUnder';
+    const date = '2018-03-29';
+    // const week = e.target.elements.week.value;
+
 
     this.setState({
-      year: year,
-      week: week,
+      date: date,
     })
 
-    this.getData(year,week);
+    this.getData(date);
 
   }
 
 
-  getData = (year, week) => {
+  getData = (date) => {
     let url =
-    `https://api.fantasydata.net/v3/nfl/odds/JSON/GameOddsByWeek/${year}/${week}`
+    `https://api.fantasydata.net/v3/mlb/odds/JSON/LiveGameOddsByDate/${date}`
 
     fetch(url, {'headers': {'Ocp-Apim-Subscription-Key': API_KEY}})
       .then(
@@ -46,7 +42,7 @@ class Home extends Component {
       .then(
         data => this.setState({data: data})
       )
-      this.getScores(year,week)
+      // this.getScores(date)
   }
 
   getScores = (year, week) => {
@@ -67,20 +63,20 @@ class Home extends Component {
   }
 
   componentWillMount() {
-    this.getData(2018, 1);
-    this.getScores(2018, 1);
+    this.getData(this.state.date);
+    // this.getScores(2018, 1);
   }
 
   render() {
     return (
-      <div className="Home">
+      <div className="MLB">
         <OddsForm getInput = {this.getInput} />
-        <h1>Year: {this.state.year} </h1>
-        <h3>Week: {this.state.week}</h3>
-        <OddsTable data={this.state.data} scores={this.state.scores} />
+        <h1>Date: {this.state.date} </h1>
+
+        <OddsTable data={this.state.data} scores={this.state.data} />
       </div>
     );
   }
 }
 
-export default Home;
+export default MLB;
