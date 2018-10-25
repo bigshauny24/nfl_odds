@@ -10,7 +10,7 @@ class MLB extends Component {
     super();
     this.state = {
       date: '2018-06-29',
-      data:[],
+      data: [],
       scores: []
     }
   }
@@ -18,58 +18,53 @@ class MLB extends Component {
   getInput = async(e) => {
     e.preventDefault();
 
+
     const date = e.target.elements.date.value;
+    // const formattedDate = Moment(date).format("LL");
     // const week = e.target.elements.week.value;
 
 
     this.setState({
       date: date,
     })
-
     this.getData(date);
-
   }
-
 
   getData = () => {
     let url =
-    `https://api.fantasydata.net/v3/mlb/odds/JSON/LiveGameOddsByDate/2018-03-29`
+    `https://api.fantasydata.net/v3/mlb/odds/JSON/GameOddsByDate/2018-JUL-29`
 
     fetch(url, {'headers': {'Ocp-Apim-Subscription-Key': MLB_API_KEY}})
       .then(
         res => res.json()
       )
       .then(
-        data => this.setState({data: data})
+        data => {
+          this.setState({data: data});
+        }
       )
-      .then(
-        console.log(this.state.data)
-      )
-      // this.getScores(date)
+        this.getScores()
   }
 
-  // getScores = (year, week) => {
-  //   let url =
-  //   `https://api.fantasydata.net/v3/nfl/scores/JSON/ScoresByWeek/${year}/${week}
-  //   `
-  //
-  //   fetch(url, {'headers': {'Ocp-Apim-Subscription-Key': MLB_API_KEY}})
-  //     .then(
-  //       res => res.json()
-  //     )
-  //     .then(
-  //       scores => this.setState({scores: scores})
-  //     )
-  //     .then(
-  //       console.log(this.state.scores)
-  //     );
-  // }
+  getScores = () => {
+    let url =
+    `https://api.fantasydata.net/v3/mlb/odds/JSON/GameOddsByDate/2018-JUL-29
+    `
+    fetch(url, {'headers': {'Ocp-Apim-Subscription-Key': MLB_API_KEY}})
+      .then(
+        res => res.json()
+      )
+      .then(
+        scores => {
+          this.setState({scores});
+        }
+      )
+
+  }
 
   componentWillMount() {
+    this.getData('2018-06-29');
 
-
-    this.getData();
-    console.log(this.state.data);
     // this.getScores(2018, 1);
   }
 
@@ -78,8 +73,8 @@ class MLB extends Component {
       <div className="MLB">
 
         <h1>Date: {this.state.date} </h1>
-
-        {/*<MLBOddsTable data={this.state.data} scores={this.state.data} />*/}
+        { this.state.scores.length > 0 && this.state.scores[0].AwayTeam }
+        <MLBOddsTable data={this.state.data} scores={this.state.data} />
       </div>
     );
   }

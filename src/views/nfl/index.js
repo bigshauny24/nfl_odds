@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './index.css';
 import OddsForm from '../../components/forms/odds';
 import OddsTable from '../../components/tables/odds';
-import API_KEY from '../../config.js';
+import NFL_API_KEY from '../../config.js';
 
 class NFL extends Component {
 
@@ -37,7 +37,7 @@ class NFL extends Component {
     let url =
     `https://api.fantasydata.net/v3/nfl/odds/JSON/GameOddsByWeek/${year}/${week}`
 
-    fetch(url, {'headers': {'Ocp-Apim-Subscription-Key': API_KEY}})
+    fetch(url, {'headers': {'Ocp-Apim-Subscription-Key': NFL_API_KEY}})
       .then(
         res => res.json()
       )
@@ -52,7 +52,7 @@ class NFL extends Component {
     `https://api.fantasydata.net/v3/nfl/scores/JSON/ScoresByWeek/${year}/${week}
     `
 
-    fetch(url, {'headers': {'Ocp-Apim-Subscription-Key': API_KEY}})
+    fetch(url, {'headers': {'Ocp-Apim-Subscription-Key': NFL_API_KEY}})
       .then(
         res => res.json()
       )

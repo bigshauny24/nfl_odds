@@ -1,44 +1,42 @@
 import React, { Component } from 'react';
 import './index.css';
-import OddsItem from './oddsItem'
+import NBAOddsItem from './nbaOddsItem'
 
-class OddsTable extends Component {
+class NBAOddsTable extends Component {
   constructor(){
     super();
     this.state = {
       teams: {
-        'ARI': 'Arizona',
         'ATL': 'Atlanta',
-        'BAL': 'Baltimore',
-        'BUF': 'Buffalo',
-        'CAR': 'Carolina',
+        'BKN': 'Brooklyn',
+        'BOS': 'Boston',
+        'CHA': 'Charlotte',
         'CHI': 'Chicago',
-        'CIN': 'Cincinnati',
         'CLE': 'Cleveland',
         'DAL': 'Dallas',
         'DEN': 'Denver',
         'DET': 'Detroit',
-        'GB': 'Green Bay',
+        'GSW': 'Golden State',
         'HOU': 'Houston',
-        'IND': 'Indianapolis',
-        'JAX': 'Jacksonville',
-        'KC': 'Kansas City',
-        'LAC': 'Los Angelos (Chargers)',
-        'LAR': 'Los Angelos (Rams)',
+        'IND': 'Indiana',
+        'LAC': 'Los Angeles',
+        'LAL': 'Los Angeles',
+        'MEM': 'Memphis',
         'MIA': 'Miami',
-        'MIN': 'Minnesotta',
-        'NE': 'New England',
-        'NO': 'New Orleans',
-        'NYG': 'New York (Giants)',
-        'NYJ': 'New York (Jets)',
-        'OAK': 'Oakland',
+        'MIL': 'Milwaukee',
+        'MIN': 'Minnesota',
+        'NOP': 'New Orleans',
+        'NYK': 'New York',
+        'OKC': 'Oklahoma City',
+        'ORL': 'Orlando',
         'PHI': 'Philadelphia',
-        'PIT': 'Pittsburgh',
-        'SEA': 'Seattle',
-        'SF': 'San Francisco',
-        'TB': 'Tampa Bay',
-        'TEN': 'Tennessee',
-        'WAS': 'Washington',
+        'PHX': 'Phoenix',
+        'POR': 'Portland',
+        'SAC': 'Sacramento',
+        'SAS': 'San Antonio',
+        'TOR': 'Toronto',
+        'UTA': 'Utah',
+        'WAS': 'Washington' 
       }
     }
   }
@@ -50,7 +48,7 @@ class OddsTable extends Component {
 
   render() {
     return (
-      <div className="OddsTable">
+      <div className="NBAOddsTable">
         <div className="row">
           <div className="col-md-12">
             <table className="table">
@@ -68,7 +66,7 @@ class OddsTable extends Component {
               <tbody>
                 {
                   this.props.data && this.props.data.map(
-                    (game, key) => <OddsItem key={key} game={game} getTeamName={this.getTeamName} scores={this.props.scores} />
+                    (game, key) => <NBAOddsItem key={key} game={game} getTeamName={this.getTeamName} scores={this.props.scores} />
                   )
                 }
               </tbody>
@@ -80,4 +78,4 @@ class OddsTable extends Component {
   }
 }
 
-export default OddsTable;
+export default NBAOddsTable;

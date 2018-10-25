@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './index.css';
 
-class MLBOddsItem extends Component {
+class NHLOddsItem extends Component {
   componentWillMount() {
     // console.log(this.props.game);
     // console.log(this.props.scores);
@@ -27,7 +27,7 @@ class MLBOddsItem extends Component {
   render() {
     return (
       <tr>
-        {/*}<th scope="col">
+        {/*<th scope="col">
             <img className="logo" alt="NFL Logo" src={require('../../../../static/images/' + this.props.game.AwayTeamName.toLowerCase() + '.png')} /><br />
             <img className="logo" alt="NFL Logo" src={require('../../../../static/images/' + this.props.game.HomeTeamName.toLowerCase() + '.png')} />
           </th>*/}
@@ -50,4 +50,4 @@ class MLBOddsItem extends Component {
   }
 }
 
-export default MLBOddsItem;
+export default NHLOddsItem;

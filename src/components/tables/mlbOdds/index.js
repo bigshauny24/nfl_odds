@@ -7,38 +7,39 @@ class MLBOddsTable extends Component {
     super();
     this.state = {
       teams: {
+        'ANA': 'Anaheim',
         'ARI': 'Arizona',
         'ATL': 'Atlanta',
         'BAL': 'Baltimore',
-        'BUF': 'Buffalo',
-        'CAR': 'Carolina',
-        'CHI': 'Chicago',
+        'BOS': 'Boston',
+        'CHC': 'Chicago',
+        'CWS': 'Chicago',
         'CIN': 'Cincinnati',
         'CLE': 'Cleveland',
-        'DAL': 'Dallas',
-        'DEN': 'Denver',
+        'COL': 'Colorado',
         'DET': 'Detroit',
-        'GB': 'Green Bay',
         'HOU': 'Houston',
-        'IND': 'Indianapolis',
-        'JAX': 'Jacksonville',
-        'KC': 'Kansas City',
-        'LAC': 'Los Angelos (Chargers)',
-        'LAR': 'Los Angelos (Rams)',
+        'KC':  'Kansas',
+        'LAA': 'Los Angeles',
+        'LAD': 'Los Angeles',
         'MIA': 'Miami',
-        'MIN': 'Minnesotta',
-        'NE': 'New England',
-        'NO': 'New Orleans',
-        'NYG': 'New York (Giants)',
-        'NYJ': 'New York (Jets)',
+        'MIL': 'Milwaukee',
+        'MIN': 'Minnesota',
+        'NY': 'New York',
+        'NYM': 'New York',
+        'NYY': 'New York',
         'OAK': 'Oakland',
         'PHI': 'Philadelphia',
         'PIT': 'Pittsburgh',
+        'SD': 'San Diego',
         'SEA': 'Seattle',
         'SF': 'San Francisco',
+        'STL': 'St. Louis',
         'TB': 'Tampa Bay',
-        'TEN': 'Tennessee',
-        'WAS': 'Washington'
+        'TEX': 'Texas',
+        'TOR': 'Toronto',
+        'WSH': 'Washington'
+
       }
     }
   }
@@ -50,7 +51,7 @@ class MLBOddsTable extends Component {
 
   render() {
     return (
-      <div className="OMLBOddsTable">
+      <div className="MLBOddsTable">
         <div className="row">
           <div className="col-md-12">
             <table className="table">

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './index.css';
-import OddsItem from './oddsItem'
+import NFLOddsItem from './nflOddsItem'
 
-class OddsTable extends Component {
+class NFLOddsTable extends Component {
   constructor(){
     super();
     this.state = {
@@ -38,7 +38,7 @@ class OddsTable extends Component {
         'SF': 'San Francisco',
         'TB': 'Tampa Bay',
         'TEN': 'Tennessee',
-        'WAS': 'Washington',
+        'WAS': 'Washington'
       }
     }
   }
@@ -50,7 +50,7 @@ class OddsTable extends Component {
 
   render() {
     return (
-      <div className="OddsTable">
+      <div className="NFLOddsTable">
         <div className="row">
           <div className="col-md-12">
             <table className="table">
@@ -68,7 +68,7 @@ class OddsTable extends Component {
               <tbody>
                 {
                   this.props.data && this.props.data.map(
-                    (game, key) => <OddsItem key={key} game={game} getTeamName={this.getTeamName} scores={this.props.scores} />
+                    (game, key) => <NFLOddsItem key={key} game={game} getTeamName={this.getTeamName} scores={this.props.scores} />
                   )
                 }
               </tbody>
@@ -80,4 +80,4 @@ class OddsTable extends Component {
   }
 }
 
-export default OddsTable;
+export default NFLOddsTable;
