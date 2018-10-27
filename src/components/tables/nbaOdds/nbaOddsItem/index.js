@@ -3,8 +3,8 @@ import './index.css';
 
 class NBAOddsItem extends Component {
   componentWillMount() {
-    // console.log(this.props.game);
-    // console.log(this.props.scores);
+    console.log(this.props.game);
+    console.log(this.props.scores);
   }
 
   getScore = (team) => {
@@ -27,10 +27,10 @@ class NBAOddsItem extends Component {
   render() {
     return (
       <tr>
-        {/*<th scope="col">
-            <img className="logo" alt="NFL Logo" src={require('../../../../static/images/' + this.props.game.AwayTeamName.toLowerCase() + '.png')} /><br />
-            <img className="logo" alt="NFL Logo" src={require('../../../../static/images/' + this.props.game.HomeTeamName.toLowerCase() + '.png')} />
-          </th>*/}
+        <th scope="col">
+            <img className="logo" alt="NBA Logo" src={require('../../../../static/nbaImages/' + this.props.game.AwayTeam.toLowerCase() + '.png')} /><br />
+            <img className="logo" alt="NBA Logo" src={require('../../../../static/nbaImages/' + this.props.game.HomeTeam.toLowerCase() + '.png')} />
+          </th>
           <td>{this.props.getTeamName(this.props.game.AwayTeamName)} {this.getScore(this.props.game.AwayTeamName)}<br />
             <br />
             {this.props.getTeamName(this.props.game.HomeTeamName)} {this.getScore(this.props.game.HomeTeamName)}
@@ -40,8 +40,8 @@ class NBAOddsItem extends Component {
             <br />{this.props.game.PregameOdds[1] && this.props.game.PregameOdds[1].HomePointSpread}
           </th>
           <th scope="col">
-            {this.props.game.PregameOdds[1] && this.props.game.PregameOdds[1].AwayMoneyLine}<br />
-            <br />{this.props.game.PregameOdds[1] && this.props.game.PregameOdds[1].HomeMoneyLine}
+            {this.props.game.PregameOdds[1] && this.props.game.PregameOdds[1].AwayTeamMoneyLine}<br />
+            <br />{this.props.game.PregameOdds[1] && this.props.game.PregameOdds[1].HomeTeamMoneyLine}
           </th>
           <th scope="col">{this.props.game.PregameOdds[1] && this.props.game.PregameOdds[1].OverUnder}
         </th>

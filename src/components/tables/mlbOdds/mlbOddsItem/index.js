@@ -27,10 +27,10 @@ class MLBOddsItem extends Component {
   render() {
     return (
       <tr>
-        {/*}<th scope="col">
-            <img className="logo" alt="NFL Logo" src={require('../../../../static/images/' + this.props.game.AwayTeamName.toLowerCase() + '.png')} /><br />
-            <img className="logo" alt="NFL Logo" src={require('../../../../static/images/' + this.props.game.HomeTeamName.toLowerCase() + '.png')} />
-          </th>*/}
+        <th scope="col">
+            <img className="logo" alt="NFL Logo" src={require('../../../../static/mlbImages/' + this.props.game.AwayTeamName.toLowerCase() + '.png')} /><br />
+            <img className="logo" alt="NFL Logo" src={require('../../../../static/mlbImages/' + this.props.game.HomeTeamName.toLowerCase() + '.png')} />
+          </th>
           <td>{this.props.getTeamName(this.props.game.AwayTeamName)} {this.getScore(this.props.game.AwayTeamName)}<br />
             <br />
             {this.props.getTeamName(this.props.game.HomeTeamName)} {this.getScore(this.props.game.HomeTeamName)}

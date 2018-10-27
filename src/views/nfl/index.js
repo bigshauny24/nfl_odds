@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './index.css';
-import OddsForm from '../../components/forms/odds';
-import OddsTable from '../../components/tables/odds';
-import NFL_API_KEY from '../../config.js';
+// import OddsForm from '../../components/forms/odds';
+// import OddsTable from '../../components/tables/odds';
+// import NFL_API_KEY from '../../config.js';
 
 class NFL extends Component {
 

@@ -59,7 +59,7 @@ class NHLOddsTable extends Component {
               <thead className="thead-dark">
                 <tr>
                   <th scope="col">
-                    <img className="logo" alt="NFL Logo" src={require('../../../static/images/nfl.png')} />
+                    <img className="logo" alt="NFL Logo" src={require('../../../static/nhlImages/nhl.png')} />
                   </th>
                   <th scope="col">Team</th>
                   <th scope="col">Spread</th>

@@ -36,7 +36,7 @@ class NBAOddsTable extends Component {
         'SAS': 'San Antonio',
         'TOR': 'Toronto',
         'UTA': 'Utah',
-        'WAS': 'Washington' 
+        'WAS': 'Washington',
       }
     }
   }
@@ -55,7 +55,7 @@ class NBAOddsTable extends Component {
               <thead className="thead-dark">
                 <tr>
                   <th scope="col">
-                    <img className="logo" alt="NFL Logo" src={require('../../../static/images/nfl.png')} />
+                    <img className="logo" alt="NBA Logo" src={require('../../../static/images/nba/nba.png')} />
                   </th>
                   <th scope="col">Team</th>
                   <th scope="col">Spread</th>

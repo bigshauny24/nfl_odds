@@ -5,7 +5,7 @@ class OddsItem extends Component {
   componentWillMount() {
     // console.log(this.props.game);
     // console.log(this.props.scores);
-    
+
   }
 
   getScore = (team) => {

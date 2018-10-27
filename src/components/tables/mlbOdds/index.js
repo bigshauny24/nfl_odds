@@ -7,13 +7,12 @@ class MLBOddsTable extends Component {
     super();
     this.state = {
       teams: {
-        'ANA': 'Anaheim',
         'ARI': 'Arizona',
         'ATL': 'Atlanta',
         'BAL': 'Baltimore',
         'BOS': 'Boston',
         'CHC': 'Chicago',
-        'CWS': 'Chicago',
+        'CHW': 'Chicago',
         'CIN': 'Cincinnati',
         'CLE': 'Cleveland',
         'COL': 'Colorado',
@@ -25,7 +24,7 @@ class MLBOddsTable extends Component {
         'MIA': 'Miami',
         'MIL': 'Milwaukee',
         'MIN': 'Minnesota',
-        'NY': 'New York',
+        'NYY': 'New York',
         'NYM': 'New York',
         'NYY': 'New York',
         'OAK': 'Oakland',
